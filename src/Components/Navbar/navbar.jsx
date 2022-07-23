@@ -41,6 +41,7 @@ const Navbar = () => {
           {offerTitle === true
             ? "BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals"
             : ""}
+            
         </div>
         <div className='offer_banner_tabs'>
           <div className='br'>

@@ -69,10 +69,10 @@ const Carousel = () => {
     <div>
       <div className='poster'>
         <img
-          src='https://image.shutterstock.com/image-photo/professional-decorative-cosmetics-makeup-products-260nw-1990650542.jpg'
+          src='https://previews.123rf.com/images/ikopylov/ikopylov1902/ikopylov190200059/120766388-super-sale-cosmetics-banner-for-shopping-season-makeup-accessories-equipment-beauty-facial-fashion-v.jpg'
           alt='test'
           loading='eager'
-          srcset='https://image.shutterstock.com/image-photo/professional-decorative-cosmetics-makeup-products-260nw-1990650542.jpg'
+          srcset='https://previews.123rf.com/images/ikopylov/ikopylov1902/ikopylov190200059/120766388-super-sale-cosmetics-banner-for-shopping-season-makeup-accessories-equipment-beauty-facial-fashion-v.jpg'
         ></img>
       </div>
       <div id='carousel'>

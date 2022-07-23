@@ -4,7 +4,6 @@ import login from "./login.png";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { setUser, deleteFromBag } from "../../Redux/action";
 import {setUser} from "../../Redux/action"
 import "./Checkout.css";
 
@@ -49,17 +48,7 @@ export const Checkout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const checkOutItem = () => {
-    // setAddress({
-    //   ...address,
-    //   Amount: off_price,
-    // });
-    // dispatch(setUser(address));
-    // for (let i = 0; i < cartProducts.length; i++) {
-    //   axios.delete(
-    //     `https://nykaa-data.herokuapp.com/cartProducts/${cartProducts[i].id}`
-    //   );
-    //   // .then((res) => dispatch(deleteFromBag(cartProducts[i].id)));
-    // }
+    
     alert("Order Placed Successfully!!  Thank You for Ordering");
     navigate("/thankyou");
   };

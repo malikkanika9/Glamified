@@ -6,14 +6,11 @@ import Navbar from "../Navbar/navbar";
 import { Footer } from "../Footer/footer";
 
 export const ProductDetails = () => {
-  const
-    [pin, setPin] = useState("");
-  const [show, setShow] = useState("input");
+  
   const [discount, setDiscount] = useState("");
   const [reviews, setReviews] = useState("");
   const [ratings, setRatings] = useState("");
-  const [data, setData] = useState({});
-  const [valid, setValid] = useState(true);
+  
   const details = useSelector((store) => store.productDetails);
   const bag1 = useSelector((store) => store.cartProducts)
   
@@ -21,61 +18,17 @@ export const ProductDetails = () => {
   const dis = Math.round(((+details.mrp - +details.price) / +details.mrp) * 100);
   const rev = Math.floor(Math.random() * 100000);
   const rat = Math.floor(Math.random() * 1000000);
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  
   var date = new Date();
   date.setDate(date.getDate() + 10);
-  var day = date.getDate();
-  var month = months[date.getMonth()];
   useEffect(() => {
     setDiscount(dis);
     setReviews(rev);
     setRatings(rat);
   }, []);
-  const handleChange = (e) => {
-    setPin(e.target.value);
-    setValid(true);
-  };
-
-  const searchPin = () => {
-    if
-      (pin.length === 6) {
-      setShow("fetch");
-      async function getPin() {
-        let res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
-        let data = await res.json();
-        console.log(data[0]);
-        if (data[0].Message == "No records found") {
-          setTimeout(() => {
-            setShow("no");
-          }, 1000);
-        } else {
-          setData(data[0].PostOffice[0]);
-          setTimeout(() => {
-            setShow("city");
-          }, 1000);
-        }
-      }
-      getPin();
-    } else {
-      setValid(false);
-    }
-  };
-
   const addToBag = () => {
     dispatch(addProduct(details))
+    alert("Item added Successfully")
   }
   return (
     <div id="main" style={{marginTop:"-20px"}}>
@@ -127,71 +80,7 @@ export const ProductDetails = () => {
               <div id="AddToBag">
                 <button onClick={addToBag}>Add to Bag</button>
               </div>
-              <div id=
-                "pin">
-                {show == "input" ? (
-                  <div>
-                    <div className="delivery">
-                     
-                      Delivery Options
-                    </div>
-                    <div id="input">
-                      <input type="number" onChange={handleChange} />
-                      <span onClick={searchPin}>Check</span>
-                    </div>
-                    {!valid ? (
-                      <div style={{ color: "red" }}>
-                        Please enter valid pincode
-                      </div>
-                    ) : null}
-                  </div>
-                ) : show == "fetch" ? (
-                  <div>Fetching delivery details...</div>
-                ) : show == "city" ? (
-                  <div>
-                    <span className="delivery">
-                      
-                      Delivery Options for
-                      <span style={{ color: "#fc2779" }}> {pin}</span>
-                      <button onClick={() => (setShow("input"), setPin(""))} style={{ color: "#fc2779", border: "1px solid #fc2779", backgroundColor: "white", marginLeft: "10px", height: "25px" }}>Change</button>
-                    </span>
-                    <div>
-                      Shipping to: {data.Block},{data.Country}
-                    </div>
-                    <div>
-                      
-                      Delivered by {day}
-                      {month}
-                    </div>
-                    <div>
-                      
-                      Cash on Delivery available on orders above ₹499
-                    </div>
-                    <div>
-                      
-                      More info
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <span className="delivery">
-                      
-                      Delivery Options for
-                      <span style={{ color: "#fc2779" }}> {pin}</span>
-                      <button onClick={() => (setShow("input"), setPin(""))} style={{ color: "#fc2779", border: "1px solid #fc2779", backgroundColor: "white", marginLeft: "10px", height: "25px" }}>Change</button>
-                    </span>
-                    <div>
-                      
-                      Information not found for entered pincode.
-                    </div>
-                    <div>
-                      
-                      More info
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+             </div>
           </div>
           <div id="genuine">
             <img src="https://i.imgur.com/QwzVWFt.png" alt="" />

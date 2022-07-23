@@ -25,8 +25,7 @@ function App() {
         <Route path="/productsdetails" element={<ProductDetails />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/thankyou" element={<ThankYou />}></Route>
-      </Routes>
-     
+      </Routes>      
     </div>
   );
 }

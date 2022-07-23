@@ -11,7 +11,7 @@ const BrandDiscount = () => {
       line2: "Combos Starting At ₹290",
     },
     {
-      name: "Lackme",
+      name: "Lakme",
       image:
         "https://images-static.nykaa.com/uploads/27014577-4f80-4d0a-8d87-62c8b007cda2.jpg?tr=w-400,cm-pad_resize",
       line1: "Free Lipstick On ₹799",
@@ -53,7 +53,7 @@ const BrandDiscount = () => {
       line2: "Extra 10% Off On ₹5000+",
     },
     {
-      name: "Colorear",
+      name: "Colorbar",
       image:
         "https://images-static.nykaa.com/uploads/c8e28059-f48f-4461-8fd1-630d8f59999e.jpg?tr=w-400,cm-pad_resize",
       line1: "Free Makeup Remover Wipes on ₹599+",
